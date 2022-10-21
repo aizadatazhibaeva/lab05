@@ -1,23 +1,19 @@
 #include <iostream>
-#include <algorithm>
+#include <string>
 #include <cctype>
 using namespace std;
+
 int main(){
-    string num; 
-    int sumeven = 0, sumodd = 0;
-    cin>>num;
-    for(int i=0; i<num.size(); i++){
-        if(i%2==0){
-            sumeven+=num[i];
-        } else {
-            sumodd+=num[i];
-        }
+    int sum1=0,sum2=0;
+    string someString;
+    getline(cin, someString); 
+    char s = someString[0];
+    for(int i=0; s!='\0'; s = someString[++i]){
+        if(isupper(s))
+            sum1++;
+        else 
+            sum2++;
     }
-    if(sumeven == sumodd){
-        cout<<"YES";
-    }
-    else {
-        cout<<"NO";
-    }
+    cout<<sum2<<" "<<sum1;
     return 0;
 }
